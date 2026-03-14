@@ -41,6 +41,7 @@ pub mod azure {
         }
         pub mod security {
             pub mod azure_key_vault;
+            pub mod azure_managed_identity;
         }
     }
 }

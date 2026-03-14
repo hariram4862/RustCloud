@@ -19,6 +19,7 @@ mod azure_function_operations;
 mod azure_key_vault_operations;
 mod azure_kubernetes_service_operations;
 mod azure_load_balancer_operations;
+mod azure_managed_identity_operations;
 mod azure_nat_gateway_operations;
 mod azure_nic_operations;
 mod azure_public_ip_operations;
