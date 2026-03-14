@@ -31,4 +31,21 @@ impl AzureCliAuth {
 
         Ok(token.accessToken)
     }
+
+    pub fn get_token_for_resource(resource: &str) -> Result<String, Box<dyn std::error::Error>> {
+        let output = std::process::Command::new("az.cmd")
+            .args([
+                "account",
+                "get-access-token",
+                "--resource",
+                resource,
+                "--query",
+                "accessToken",
+                "-o",
+                "tsv",
+            ])
+            .output()?;
+
+        Ok(String::from_utf8(output.stdout)?.trim().to_string())
+    }
 }
